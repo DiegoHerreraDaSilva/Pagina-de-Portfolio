@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* INICIO HEADER */
+.nav{
+    background-color: rgb(65, 64, 64);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    z-index: 9; /* Define a ordem de sobreposição, o item com maior index ficará sobre os outros*/
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-right: 25px;
+}
+
+.nav-list a{
+    text-decoration: none;
+    color: #ddd;
+    padding: 20px;
+}
+
+
+.nav-list a:hover{
+    color: white;
+}
+
+/* FIM HEADER */
+
+/* INCIO MAIN */
+.main{
+    width: 100%;
+    background-color: black;
+    height: calc(100vh - 80px); /* Aplicar só o tamanho criaria um scroll por causa do header*/
+                                 /* Com esse calcula ele aplica a altura menos a altura do header*/
+                                    /* Corrijindo esse problema*/
+    background-image: url("IMAGES/programador.png");
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}                                                      
+
+.main h1{
+    color: white;
+    font-size:  55px;
+}
+
+.main p{
+    font-size: 25px;
+    font-style: italic;
+    color: rgb(82, 104, 199);
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+.botaoprojetos{
+    cursor: pointer; /* Faz com que quando passa o mouse em cima vira a maozinha*/
+    background-color: white;
+    border: 0;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold; /* Deixa em negrito*/
+    transition: 0.9s; /*Define o tempo do transforma no hover*/
+}
+
+.main a{
+    text-decoration: none; /*Tira o sublinhado da ancora*/
+    color: #181818;
+}
+.botaoprojetos:hover{
+    transform: scale(1.1);  /* Transforma o tamanho (*1.1)/110%*/  
+}
+
+/* FIM MAIN */
+
+/* COMEÇO SOBRE */
+.sobre{
+    background-color: white;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sobre div{
+    max-width: 50%;
+    padding-right: 40px;
+}
+
+.sobre img{
+    max-width: 50%;
+    border-radius: 20px;
+}
+
+.sobre div h2{
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+/* FIM SOBRE */
+
+/* INICIO PROJETOS */
+.projetos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0; /* O primeiro número defina o espacamento em cima e em baixo e o segundo numero define doas lados*/
+}
+
+.projetos h2{
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.projetos p{
+    margin-bottom: 50px;
+    font-style: italic;
+}
+.projeto-list{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.projetos img{
+    width: 20%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    opacity: 0.8; /* Define a opacidade*/
+    transition: 0.8s;
+}
+
+.projetos img:hover{
+    opacity: 1;
+}
+
+.botao{
+    background-color: blue;
+    border: 0;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-size: 20px;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.botao:hover{
+    padding: 20px 35px;
+    font-size: 25px;
+    color: aquamarine;
+    font-weight: bold;
+    border-radius: 100px;
+}
+/* FIM PROJETOS */
+
+/* INICIO RODAPE */
+footer{
+    width: 100%;
+    background-color: black;
+    padding: 60px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer p{
+    margin-left: 10px;
+}
+
+/* FIM RODAPE */
+
+/* RESPONSIVIDADE */
+@media (max-width: 1050px){ /* Vai aplicar essa estilização nas telas com até 1050 pixels*/
+    /* INICIO MAIN */       /* Serve para adaptar a aplicação a telas menores*/
+    .main h1{
+        font-size: 20px;
+    }
+    .main p{
+        font-size: 18px;
+    }
+    .main{
+        background-size: cover; /* Tenta encaixar a imagem inteira*/
+    }
+    /* FIM MAIN */
+
+    /* INICIO SOBRE */
+    .sobre{
+        flex-direction: column;
+        padding-top: 80px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+    .sobre div{
+        max-width: 80%;
+    }
+    .sbre div h2{
+        font-size: 45px;
+    }
+    .sobre img{
+        width: 80%;
+        margin-top: 30px;
+    }
+    /* FIM SOBRE */
+
+    /* INICIO PROJETOS */
+    .projetos img{
+        width: 28%;
+    }
+    /* FIM PROJETOS */
+
+    /* INICIO RODAPE */
+    footer{
+        flex-direction: column;
+    }
+    footer p{
+        margin: 0;
+        margin-top: 10px;
+    }
+    footer h3{
+        font-size: 25px;
+    }
+    /* FIM RODAPE */
+}
